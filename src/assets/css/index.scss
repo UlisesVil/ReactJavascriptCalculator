@@ -1,0 +1,123 @@
+
+$button: #480152;
+$background:rgb(94, 1, 1);
+
+#root{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    //border: 1px solid red;
+    justify-content: center;
+    background-image: url(../images/back.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+ -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+-webkit-user-select: none; /* Chrome, Safari, and Opera */
+-webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+body{
+    margin: 0px;
+    background-color: black;
+
+}
+
+.container{
+    margin: auto;
+}
+
+.calculator {
+   // border: 2px solid #47476b;
+    padding: 10px;
+    background: rgb(0, 0, 0);
+    width: 320px;
+    position: relative;
+    border-radius: 10px;
+    padding-top: 20px;
+    box-shadow: 0px 0px 20px rgb(246, 209, 255),
+    
+
+}
+
+.formulaScreen {
+    min-height: 20px;
+    //font-family: ;
+    font-size: 20px;
+    color: orange;
+    text-align: right;
+    vertical-align: text-top;
+    //border: 1px solid red;
+    line-height: 20px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    border-bottom: 1px solid white;
+}
+
+.outputScreen{
+    font-size: 29px;
+    //font-family: ;
+    color: white;
+    text-align: right;
+    line-height: 35px;
+    //border: 1px solid red;
+    margin-bottom: 15px;
+}
+
+button {
+    
+    
+    position: relative;
+    height: 65px;
+    width: 80px;
+    color: white;
+   // outline: 1px solid black;
+    border: none;
+    background: $button;
+    //font-family: ;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    &:hover{
+        color: black;
+        //outline: .05em solid grey;
+        z-index: 3;
+        background-color: rgb(157, 4, 196);
+        box-shadow: 1px 1px 10px rgb(246, 209, 255),
+    }
+    &:active{
+        box-shadow: 0px 0px 0px rgb(246, 209, 255),
+        inset 0 0 10px 5px rgb(44, 44, 44);
+        
+    }
+}
+
+.jumbo{
+    width: 160px;
+}
+
+#equals{
+    margin-left: 1px;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1{
+    color: red;
+}
+
