@@ -1,16 +1,10 @@
 import React from 'react';
 //import './assets/css/index.css';
 
-
-
-
-
-
-
 const isOperator = /[x/+-]/,
       endsWithOperator = /[x+-/]$/,
       endsWithNegativeSign = /[x/+]-$/,
-      clearStyle = { background: "#ac3939" },
+      clearStyle = { background: "linear-gradient(90deg, rgba(87,0,113,1) 0%, rgba(110,0,143,1) 50%, rgba(255,0,0,1) 100%)" },
       operatorStyle = { background: "#666666" },
       equalsStyle = {
         background: "#004466",
@@ -20,7 +14,6 @@ const isOperator = /[x/+-]/,
       };
 
 
-  //components:
 class Calculator extends React.Component {
 
   constructor (props) {
@@ -239,21 +232,21 @@ class Buttons extends React.Component {
           7
         </button>
         <button
-          id="clear"
+          id="eight"
           onClick={this.props.numbers}
           value="8"
           >
           8
         </button>
         <button
-          id="clear"
+          id="nine"
           onClick={this.props.numbers}
           value="9"
           >
           9
         </button>
         <button
-          id="substract"
+          id="subtract"
           onClick={this.props.operators}
           style={operatorStyle}
           value="-"
@@ -261,21 +254,21 @@ class Buttons extends React.Component {
           -
         </button>
         <button
-          id="clear"
+          id="four"
           onClick={this.props.numbers}
           value="4"
           >
           4
         </button>
         <button
-          id="clear"
+          id="five"
           onClick={this.props.numbers}
           value="5"
           >
           5
         </button>
         <button
-          id="clear"
+          id="six"
           onClick={this.props.numbers}
           value="6"
           >
@@ -338,7 +331,6 @@ class Buttons extends React.Component {
   }
 }
 
-
 class Output extends React.Component{
   render(){
     return(
@@ -359,8 +351,4 @@ class Formula extends React.Component{
   }
 }
 
-
-
-
-  
-  export default Calculator;
+export default Calculator;

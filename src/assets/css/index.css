@@ -13,16 +13,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  -moz-user-select: none;
-  /* Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer */
-  -khtml-user-select: none;
-  /* KHTML browsers (e.g. Konqueror) */
-  -webkit-user-select: none;
-  /* Chrome, Safari, and Opera */
-  -webkit-touch-callout: none;
-  /* Disable Android and iOS callouts*/
 }
 
 body {
@@ -48,7 +38,7 @@ body {
 .formulaScreen {
   min-height: 20px;
   font-size: 20px;
-  color: orange;
+  color: #968e81;
   text-align: right;
   vertical-align: text-top;
   line-height: 20px;
@@ -99,7 +89,12 @@ button:active {
   margin-bottom: 5px;
 }
 
-h1 {
-  color: red;
+@media screen and (max-height: 500px) {
+  #root {
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 /*# sourceMappingURL=index.css.map */
