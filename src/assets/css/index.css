@@ -1,14 +1,15 @@
+@font-face {
+  font-family: 'calculator';
+  src: url('../fonts/Calculator.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #root {
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-image: url(../images/back.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -17,26 +18,20 @@
 
 body {
   margin: 0px;
-  background-color: black;
-}
-
-.container {
-  margin: auto;
 }
 
 .calculator {
   padding: 10px;
   background: black;
-  width: 320px;
+  width: 336px;
   position: relative;
   border-radius: 10px;
   padding-top: 20px;
-  -webkit-box-shadow: 0px 0px 20px #f6d1ff;
-          box-shadow: 0px 0px 20px #f6d1ff;
+          box-shadow: 0px 0px 20px #f6d1ff; 
 }
 
 .formulaScreen {
-  min-height: 20px;
+  min-height: 29px;
   font-size: 20px;
   color: #968e81;
   text-align: right;
@@ -44,7 +39,12 @@ body {
   line-height: 20px;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  border-bottom: 1px solid white;
+  padding-right: 10px;
+  box-shadow: 0px 0px 20px #f6d1ff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;   
+  font-family: calculator;  
+  font-style: italic;   
 }
 
 .outputScreen {
@@ -53,6 +53,12 @@ body {
   text-align: right;
   line-height: 35px;
   margin-bottom: 15px;
+  padding-right: 10px;
+  box-shadow: 0px 0px 20px #f6d1ff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: calculator;
+  font-style: italic;
 }
 
 button {
@@ -65,28 +71,26 @@ button {
   font-size: 20px;
   cursor: pointer;
   border-radius: 20px;
+  margin: 2px;
 }
 
 button:hover {
   color: black;
-  z-index: 3;
   background-color: #9d04c4;
-  -webkit-box-shadow: 1px 1px 10px #f6d1ff;
-          box-shadow: 1px 1px 10px #f6d1ff;
+  box-shadow: 1px 1px 10px #f6d1ff;
 }
 
 button:active {
-  -webkit-box-shadow: 0px 0px 0px #f6d1ff, inset 0 0 10px 5px #2c2c2c;
-          box-shadow: 0px 0px 0px #f6d1ff, inset 0 0 10px 5px #2c2c2c;
+box-shadow: 0px 0px 0px #f6d1ff, inset 0 0 10px 5px #2c2c2c;
 }
 
 .jumbo {
-  width: 160px;
+  width: 164px;
 }
 
 #equals {
-  margin-left: 1px;
-  margin-bottom: 5px;
+  margin-left: 3px;
+  margin-bottom: 7px;
 }
 
 @media screen and (max-height: 500px) {
@@ -97,4 +101,3 @@ button:active {
     background-size: cover;
   }
 }
-/*# sourceMappingURL=index.css.map */

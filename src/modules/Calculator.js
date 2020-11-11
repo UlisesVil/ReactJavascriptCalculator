@@ -3,13 +3,13 @@ import React from 'react';
 
 const isOperator = /[x/+-]/,
       endsWithOperator = /[x+-/]$/,
-      endsWithNegativeSign = /[x/+]-$/,
+      endsWithNegativeSign = /\d[x/+-]{1}-$/,
       clearStyle = { background: "linear-gradient(90deg, rgba(87,0,113,1) 0%, rgba(110,0,143,1) 50%, rgba(255,0,0,1) 100%)" },
       operatorStyle = { background: "#666666" },
       equalsStyle = {
         background: "#004466",
         position: "absolute",
-        height: 130,
+        height: 134,
         bottom: 5
       };
 
@@ -35,8 +35,8 @@ class Calculator extends React.Component {
   }
 
   maxDigitWarning() {
-    this.SetState({
-      currentVal: "Digit Limit Met",
+    this.setState({
+      currentVal: "You can't write more",
       prevVal: this.state.currentVal
     });
     setTimeout(() => this.setState({currentVal:
@@ -52,15 +52,19 @@ class Calculator extends React.Component {
       }
 
       expression = expression.replace(/x/g, "*")
-                             .replace(/-/g, "-");
+                             .replace(/-/g, "-")
+                             .replace('--', '+0+0+0+0+0+0+');
 
       let answer = Math.round(1000000000000 * 
                         eval(expression))/ 1000000000000;
                 
       this.setState({
         currentVal: answer.toString(),
-        formula: expression.replace(/\*/g, ".")
-                           .replace(/-/g, "-") + "=" + answer,
+        formula: expression.replace(/\*/g, "x")
+                           .replace(/-/g, "-") 
+                           .replace('+0+0+0+0+0+0+', '--')
+                           .replace(/(x|\/|\+)-/, '$1-')
+                           .replace(/^-/, '-'),//+ "=" + answer,
         prevVal: answer,
         evaluated: true
       });
@@ -179,7 +183,7 @@ class Calculator extends React.Component {
       <div className="container">
 
         <div className="calculator">
-          <Formula formula={this.state.formula.replace(/x/g, ".")} />
+          <Formula formula={this.state.formula.replace(/x/g, "x")} />
           <Output currentValue={this.state.currentVal} />
           <Buttons
             decimal={this.handleDecimal}
