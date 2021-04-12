@@ -1,17 +1,16 @@
 import React from 'react';
-//import './assets/css/index.css';
 
 const isOperator = /[x/+-]/,
-      endsWithOperator = /[x+-/]$/,
-      endsWithNegativeSign = /\d[x/+-]{1}-$/,
-      clearStyle = { background: "linear-gradient(90deg, rgba(87,0,113,1) 0%, rgba(110,0,143,1) 50%, rgba(255,0,0,1) 100%)" },
-      operatorStyle = { background: "#666666" },
-      equalsStyle = {
-        background: "#004466",
-        position: "absolute",
-        height: 134,
-        bottom: 5
-      };
+  endsWithOperator = /[x+-/]$/,
+  endsWithNegativeSign = /\d[x/+-]{1}-$/,
+  clearStyle = { background: "linear-gradient(90deg, rgba(87,0,113,1) 0%, rgba(110,0,143,1) 50%, rgba(255,0,0,1) 100%)" },
+  operatorStyle = { background: "#666666" },
+  equalsStyle = {
+    background: "#004466",
+    position: "absolute",
+    height: 129,
+    bottom: 5
+};
 
 
 class Calculator extends React.Component {
@@ -19,13 +18,12 @@ class Calculator extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-        currentVal:"0",
-        prevVal:"0",
-        formula: "",
-        currentSign:"pos",
-        lastClicked: ""
+      currentVal:"0",
+      prevVal:"0",
+      formula: "",
+      currentSign:"pos",
+      lastClicked: ""
     };
-
     this.maxDigitWarning = this.maxDigitWarning.bind(this);
     this.handleOperators = this.handleOperators.bind(this);
     this.handleEvaluate = this.handleEvaluate.bind(this);
@@ -44,13 +42,11 @@ class Calculator extends React.Component {
   }
 
   handleEvaluate() {
-    if (!this.state.currentVal.includes("Limit")){
+    if(!this.state.currentVal.includes("Limit")){
       let expression = this.state.formula;
-
       while(endsWithOperator.test(expression)){
         expression = expression.slice(0, -1);
       }
-
       expression = expression.replace(/x/g, "*")
                              .replace(/-/g, "-")
                              .replace('--', '+0+0+0+0+0+0+');
@@ -64,7 +60,7 @@ class Calculator extends React.Component {
                            .replace(/-/g, "-") 
                            .replace('+0+0+0+0+0+0+', '--')
                            .replace(/(x|\/|\+)-/, '$1-')
-                           .replace(/^-/, '-'),//+ "=" + answer,
+                           .replace(/^-/, '-'),
         prevVal: answer,
         evaluated: true
       });
@@ -80,19 +76,19 @@ class Calculator extends React.Component {
         evaluated: false
       });
 
-      if(evaluated) {
+      if(evaluated){
         this.setState({
           formula: prevVal + value
         });
-      }else if(!endsWithOperator.test(formula)) {
+      }else if(!endsWithOperator.test(formula)){
         this.setState({
           prevVal: formula,
           formula: formula + value
         });
-      }else if(!endsWithNegativeSign.test(formula)) {
+      }else if(!endsWithNegativeSign.test(formula)){
         this.setState({
           formula: (endsWithNegativeSign.test(formula + value)?
-                  formula : prevVal) + value
+            formula : prevVal) + value
         });
       }else if(value !== "-") {
         this.setState({
@@ -106,11 +102,9 @@ class Calculator extends React.Component {
     if(!this.state.currentVal.includes("Limit")) {
       const { currentVal, formula, evaluated } = this.state;
       const value = e.target.value;
-
       this.setState({
         evaluated: false
       });
-
       if(currentVal.length > 21) {
         this.maxDigitWarning();
       }else if(evaluated){
@@ -121,14 +115,14 @@ class Calculator extends React.Component {
       }else{
         this.setState({
           currentVal: 
-              currentVal ==="0" || isOperator.test(currentVal)?
-              value : currentVal+value,
+            currentVal ==="0" || isOperator.test(currentVal)?
+            value : currentVal+value,
           formula:
-              currentVal === "0" && value === "0" ?
-                    formula === "" ?  value : formula
-                : /([^.0-9]0|^0)$/.test(formula) ?
-                      formula.slice(0, -1) + value
-                      :formula + value
+            currentVal === "0" && value === "0" ?
+              formula === "" ?  value : formula
+              : /([^.0-9]0|^0)$/.test(formula) ?
+                formula.slice(0, -1) + value
+                :formula + value
         });
       }
     }
@@ -136,14 +130,12 @@ class Calculator extends React.Component {
 
   handleDecimal() {
     if (this.state.evaluated === true) {
-
       this.setState({
         currentVal: "0.",
         formula: "0.",
         evaluated: false
       });
-
-    }else if ( !this.state.currentVal.includes(".") &&
+    }else if (!this.state.currentVal.includes(".") &&
               !this.state.currentVal.includes("Limit") ) {
       this.setState({
         evaluated: false
@@ -151,11 +143,11 @@ class Calculator extends React.Component {
       if (this.state.currentVal.length > 21) {
           this.maxDigitWarning();
       }else if ( endsWithOperator.test(this.state.formula) || 
-                (this.state.currentVal === "0" && this.state.formula === "") ) {
-          this.setState({
-            currentVal: "0.",
-            formula: this.state.formula + "0."
-          });
+               ( this.state.currentVal === "0" && this.state.formula === "") ) {
+        this.setState({
+          currentVal: "0.",
+          formula: this.state.formula + "0."
+        });
       }else{
         this.setState({
           currentVal: this.state.formula.match(/(-?\d+\.?\d*)$/)[0] + ".",
@@ -177,11 +169,8 @@ class Calculator extends React.Component {
   }
 
   render () {
-    
     return (
-
       <div className="container">
-
         <div className="calculator">
           <Formula formula={this.state.formula.replace(/x/g, "x")} />
           <Output currentValue={this.state.currentVal} />
@@ -199,7 +188,6 @@ class Calculator extends React.Component {
 }
 
 class Buttons extends React.Component {
-
   render () {
     return (
       <div>
@@ -209,7 +197,7 @@ class Buttons extends React.Component {
           onClick={this.props.initialize}
           style={clearStyle}
           value="AC"
-          >
+        >
           AC
         </button>
         <button 
@@ -217,7 +205,7 @@ class Buttons extends React.Component {
           onClick={this.props.operators}
           style={operatorStyle}
           value="/"
-          >
+        >
           /
         </button>
         <button 
@@ -225,28 +213,28 @@ class Buttons extends React.Component {
           onClick={this.props.operators}
           style={operatorStyle}
           value="x"
-          >
+        >
           x
         </button>
         <button 
           id="seven"
           onClick={this.props.numbers}
           value="7"
-          >
+        >
           7
         </button>
         <button
           id="eight"
           onClick={this.props.numbers}
           value="8"
-          >
+        >
           8
         </button>
         <button
           id="nine"
           onClick={this.props.numbers}
           value="9"
-          >
+        >
           9
         </button>
         <button
@@ -254,28 +242,28 @@ class Buttons extends React.Component {
           onClick={this.props.operators}
           style={operatorStyle}
           value="-"
-          >
+        >
           -
         </button>
         <button
           id="four"
           onClick={this.props.numbers}
           value="4"
-          >
+        >
           4
         </button>
         <button
           id="five"
           onClick={this.props.numbers}
           value="5"
-          >
+        >
           5
         </button>
         <button
           id="six"
           onClick={this.props.numbers}
           value="6"
-          >
+        >
           6
         </button>
         <button
@@ -283,28 +271,28 @@ class Buttons extends React.Component {
           onClick={this.props.operators}
           style={operatorStyle}
           value="+"
-          >
+        >
           +
         </button>
         <button
           id="one"
           onClick={this.props.numbers}
           value="1"
-          >
+        >
           1
         </button>
         <button
           id="two"
           onClick={this.props.numbers}
           value="2"
-          >
+        >
           2
         </button>
         <button
           id="three"
           onClick={this.props.numbers}
           value="3"
-          >
+        >
           3
         </button>
         <button 
@@ -312,14 +300,14 @@ class Buttons extends React.Component {
           id="zero"
           onClick={this.props.numbers}
           value="0"
-          >
+        >
           0
         </button>
         <button
           id="decimal"
           onClick={this.props.decimal}
           value="."
-          >
+        >
           .
         </button>
         <button
@@ -327,7 +315,7 @@ class Buttons extends React.Component {
           onClick={this.props.evaluate}
           style={equalsStyle}
           value="="
-          >
+        >
           =
         </button>
       </div>
