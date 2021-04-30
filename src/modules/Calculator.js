@@ -3,8 +3,8 @@ import React from 'react';
 const isOperator = /[x/+-]/,
   endsWithOperator = /[x+-/]$/,
   endsWithNegativeSign = /\d[x/+-]{1}-$/,
-  clearStyle = { background: "linear-gradient(90deg, rgba(87,0,113,1) 0%, rgba(110,0,143,1) 50%, rgba(255,0,0,1) 100%)" },
-  operatorStyle = { background: "#666666" },
+  clearStyle = { background: "rgba(255,150,0,.6)" },
+  operatorStyle = { background: "rgba(196, 4, 4, 0.459)" },
   equalsStyle = {
     background: "#004466",
     position: "absolute",

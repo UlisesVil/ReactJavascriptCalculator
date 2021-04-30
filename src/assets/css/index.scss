@@ -1,4 +1,4 @@
-$button: #480152;
+$button: #3acc0091;
 $background:rgb(94, 1, 1);
 
 body{
@@ -29,7 +29,7 @@ body{
     width: 320px;
     padding: 10px;
     padding-top: 20px;
-    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.308);
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgb(246, 209, 255),
 }
@@ -56,17 +56,19 @@ body{
 
 button {
     position: relative;
-    height: 65px;
-    width: 80px;
+    height: 62px;
+    width: 78px;
     background: $button;
     font-size: 20px;
     color: white;
     cursor: pointer;
     border: none;
     border-radius: 20px;
+    margin: 1px;
     &:hover{
         color: black;
-        background-color: rgb(157, 4, 196);
+        text-shadow: 2px 2px 3px white;
+        background-color: rgb(26, 196, 4);
         box-shadow: 1px 1px 10px rgb(246, 209, 255);
         z-index: 3;
     }
@@ -77,7 +79,7 @@ button {
 }
 
 .jumbo{
-    width: 160px;
+    width: 158px;
 }
 
 #equals{
@@ -95,12 +97,12 @@ button {
     }
 
     .jumbo{
-        width: 115px;
+        width: 112px;
     }
 
     button {
-        height: 65px;
-        width: 57px;
+        height: 62px;
+        width: 56px;
         font-size: 20px;
     }
 }
