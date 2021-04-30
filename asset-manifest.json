@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ReactJavascriptCalculator/static/css/main.f46fb125.chunk.css",
-    "main.js": "/ReactJavascriptCalculator/static/js/main.0183c6fc.chunk.js",
-    "main.js.map": "/ReactJavascriptCalculator/static/js/main.0183c6fc.chunk.js.map",
+    "main.css": "/ReactJavascriptCalculator/static/css/main.58b42da7.chunk.css",
+    "main.js": "/ReactJavascriptCalculator/static/js/main.5e4c32ad.chunk.js",
+    "main.js.map": "/ReactJavascriptCalculator/static/js/main.5e4c32ad.chunk.js.map",
     "runtime-main.js": "/ReactJavascriptCalculator/static/js/runtime-main.9cc098e5.js",
     "runtime-main.js.map": "/ReactJavascriptCalculator/static/js/runtime-main.9cc098e5.js.map",
     "static/js/2.c3788b75.chunk.js": "/ReactJavascriptCalculator/static/js/2.c3788b75.chunk.js",
     "static/js/2.c3788b75.chunk.js.map": "/ReactJavascriptCalculator/static/js/2.c3788b75.chunk.js.map",
     "index.html": "/ReactJavascriptCalculator/index.html",
-    "precache-manifest.fed85a224a1400ed9c6efa2f11e3b2cb.js": "/ReactJavascriptCalculator/precache-manifest.fed85a224a1400ed9c6efa2f11e3b2cb.js",
+    "precache-manifest.0285bf20497700800509d014dce36743.js": "/ReactJavascriptCalculator/precache-manifest.0285bf20497700800509d014dce36743.js",
     "service-worker.js": "/ReactJavascriptCalculator/service-worker.js",
-    "static/css/main.f46fb125.chunk.css.map": "/ReactJavascriptCalculator/static/css/main.f46fb125.chunk.css.map",
+    "static/css/main.58b42da7.chunk.css.map": "/ReactJavascriptCalculator/static/css/main.58b42da7.chunk.css.map",
     "static/js/2.c3788b75.chunk.js.LICENSE.txt": "/ReactJavascriptCalculator/static/js/2.c3788b75.chunk.js.LICENSE.txt",
     "static/media/index.css": "/ReactJavascriptCalculator/static/media/back1.bc50c749.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.9cc098e5.js",
     "static/js/2.c3788b75.chunk.js",
-    "static/css/main.f46fb125.chunk.css",
-    "static/js/main.0183c6fc.chunk.js"
+    "static/css/main.58b42da7.chunk.css",
+    "static/js/main.5e4c32ad.chunk.js"
   ]
 }
